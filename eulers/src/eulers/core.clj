@@ -2,21 +2,21 @@
   (:require [clojure.string :as str]))
 
 (defn name_collection [name]
-  "returns a sequence of lower case chars in a name"
+  "Returns a StringSeq containing lower case chars in a name."
   (seq (str/lower-case name)))
 
 (def alphabet
-  "range of letters a to z"
+  "Returns a LazySeq of char letters a to z."
   (let [a (int \a)
         z (inc (int\z))]
     (map char (range a z))))
 
 (defn letter_weight [letter]
-  "It returns the index + 1 of a letter in the alphabet"
+  "Returns a Long representing the index + 1 of the given char in the alphabet."
   (+ 1 (.indexOf alphabet letter)))
 
 (defn name_weight [name]
-  "Returns the total value of each letter in a name"
+  "Returns a Long representing the sum of each weighted char letter in a name."
   (loop [letters (name_collection name)
          acc 0]
     (if (empty? letters)
