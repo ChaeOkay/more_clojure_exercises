@@ -22,3 +22,12 @@
     (if (empty? letters)
       acc
       (recur (rest letters) (+ acc (letter_weight (first letters)))))))
+
+(def names
+  "Returns a String containing context of names.txt."
+  (slurp "/Users/chae/chae/more_clojure_exercises/eulers/src/eulers/names.txt")
+)
+
+(def name_list
+  "Returns a vector of names separated by commas."
+  (str/split names #","))
