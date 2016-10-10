@@ -23,10 +23,21 @@
       acc
       (recur (rest letters) (+ acc (letter_weight (first letters)))))))
 
-(def names
+(def load_names
   "Returns a String containing context of names.txt."
   (slurp "/Users/chae/chae/more_clojure_exercises/eulers/src/eulers/names.txt"))
 
 (def name_list
-  "Returns an ISeq of names separated by commas."
-  (re-seq #"\w+" names))
+  "Returns an ISeq of alphabetically sorted names."
+  (-> (re-seq #"\w+" load_names)
+      sort))
+
+(defn name_score [name]
+  (* (+ 1 (.indexOf name_list name)) (name_weight name)))
+
+(def total_score
+  (loop [names name_list
+         acc 0]
+    (if (empty? names)
+      acc
+      (recur (rest names) (+ acc (name_score (first names)))))))

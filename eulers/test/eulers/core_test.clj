@@ -2,8 +2,8 @@
   (:require [eulers.core :as core]
             [midje.sweet :refer :all]))
 
-(fact "The letter 'a' has a weight of 1"
-  (core/letter_weight \a) => 1)
+(fact "The letter 'c' has a weight of 3"
+  (core/letter_weight \c) => 3)
 
 (fact "The name 'COLIN' has weight of 53"
   (let [name "COLIN"]
@@ -12,5 +12,14 @@
 (fact "About name_list"
   (fact "The list has 5163 items"
     (count core/name_list) => 5163)
-  (fact "A name contains only chars"
-    (first core/name_list) => "MARY"))
+  (fact "The list is alphabetized and only contains chars"
+    (nth core/name_list 937) => "COLIN"))
+
+(fact "The accumulated score of the 938th name, COLIN, is 49714"
+      (core/name_score "COLIN") => 49714)
+
+(fact "index of colin is 938"
+      (+ 1 (.indexOf core/name_list "COLIN")) => 938)
+
+(fact "the total score is 871198282"
+  core/total_score => 871198282)
