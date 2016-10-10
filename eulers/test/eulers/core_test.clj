@@ -9,5 +9,8 @@
   (let [name "COLIN"]
     (core/name_weight name) => 53))
 
-(fact "Name list has 5163 items"
-  (count core/name_list) => 5163)
+(fact "About name_list"
+  (fact "The list has 5163 items"
+    (count core/name_list) => 5163)
+  (fact "A name contains only chars"
+    (first core/name_list) => "MARY"))
