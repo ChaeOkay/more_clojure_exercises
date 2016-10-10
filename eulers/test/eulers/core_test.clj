@@ -15,11 +15,11 @@
   (fact "The list is alphabetized and only contains chars"
     (nth core/name_list 937) => "COLIN"))
 
-(fact "The accumulated score of the 938th name, COLIN, is 49714"
-      (core/name_score "COLIN") => 49714)
-
-(fact "index of colin is 938"
+(fact "The index of COLIN is 938"
       (+ 1 (.indexOf core/name_list "COLIN")) => 938)
 
-(fact "the total score is 871198282"
+(fact "The score of the 938th name, COLIN, is 49714"
+      (core/name_score "COLIN") => 49714)
+
+(fact "The total score is 871198282"
   core/total_score => 871198282)
