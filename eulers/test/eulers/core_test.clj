@@ -3,23 +3,23 @@
             [midje.sweet :refer :all]))
 
 (fact "The letter 'c' has a weight of 3"
-  (core/letter_weight \c) => 3)
+  (core/letter-weight \c) => 3)
 
 (fact "The name 'COLIN' has weight of 53"
   (let [name "COLIN"]
-    (core/name_weight name) => 53))
+    (core/name-weight name) => 53))
 
-(fact "About name_list"
+(fact "About name-list"
   (fact "The list has 5163 items"
-    (count core/name_list) => 5163)
+    (count core/name-list) => 5163)
   (fact "The list is alphabetized and only contains chars"
-    (nth core/name_list 937) => "COLIN"))
+    (nth core/name-list 937) => "COLIN"))
 
 (fact "The index of COLIN is 938"
-      (+ 1 (.indexOf core/name_list "COLIN")) => 938)
+      (+ 1 (.indexOf core/name-list "COLIN")) => 938)
 
 (fact "The score of the 938th name, COLIN, is 49714"
-      (core/name_score "COLIN") => 49714)
+      (core/name-score "COLIN") => 49714)
 
 (fact "The total score is 871198282"
-  core/total_score => 871198282)
+  core/total-score => 871198282)
