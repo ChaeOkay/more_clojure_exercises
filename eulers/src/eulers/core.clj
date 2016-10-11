@@ -25,7 +25,7 @@
 
 (def load_names
   "Returns a String containing context of names.txt."
-  (slurp "/Users/chae/chae/more_clojure_exercises/eulers/src/eulers/names.txt"))
+  (slurp "doc/names.txt"))
 
 (def name_list
   "Returns an ISeq of alphabetically sorted names."
